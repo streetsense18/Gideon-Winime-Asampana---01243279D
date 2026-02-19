@@ -40,3 +40,17 @@ int main() {
     } while (choice != 3);
     return 0;
 }
+
+void addStudent() {
+    std::string idx, name;
+    std::cout << "Enter Index Number: ";
+    std::cin >> idx;
+    std::cout << "Enter Name: ";
+    std::cin.ignore();
+    std::getline(std::cin, name);
+    if (idx.empty() || name.empty()) {
+        std::cout << "Invalid input. Please try again.\n";
+        return;
+    }
+    students.emplace_back(idx, name);
+}
