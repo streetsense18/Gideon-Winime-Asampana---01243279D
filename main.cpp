@@ -96,3 +96,20 @@ void viewAttendance() {
         std::cout << "Date: " << a.date << ", Index: " << a.studentIndex << ", Present: " << (a.isPresent ? "Yes" : "No") << "\n";
     }
 }
+
+void saveData() {
+    std::ofstream file("students.txt");
+    for (auto& s : students) {
+        file << s.indexNumber << "," << s.name << "\n";
+    }
+    file.close();
+}
+
+void loadData() {
+    std::ifstream file("students.txt");
+    std::string idx, name;
+    while (std::getline(file, idx, ',') && std::getline(file, name)) {
+        students.emplace_back(idx, name);
+    }
+    file.close();
+}
