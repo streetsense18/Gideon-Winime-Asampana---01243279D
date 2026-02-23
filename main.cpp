@@ -161,3 +161,22 @@ void loadData() {
     }
     file.close();
 }
+
+int main() {
+    loadData();
+    int choice;
+    do {
+        std::cout << "1. Add Student\n2. View Students\n3. Mark Attendance\n4. View Attendance\n5. Generate Report\n6. Exit\n";
+        std::cin >> choice;
+        switch (choice) {
+            case 1: addStudent(); break;
+            case 2: viewStudents(); break;
+            case 3: markAttendance(); break;
+            case 4: viewAttendance(); break;
+            case 5: generateReport(); break;
+            case 6: saveData(); std::cout << "Exiting...\n"; break;
+            default: std::cout << "Invalid choice. Please try again.\n";
+        }
+    } while (choice != 6);
+    return 0;
+}
