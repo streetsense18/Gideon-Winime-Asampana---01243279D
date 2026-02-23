@@ -68,3 +68,31 @@ int main() {
     } while (choice != 3);
     return 0;
 }
+
+class Attendance {
+public:
+    std::string date;
+    std::string studentIndex;
+    bool isPresent;
+    Attendance(std::string d, std::string idx, bool present) : date(d), studentIndex(idx), isPresent(present) {}
+};
+
+std::vector<Attendance> attendanceRecords;
+
+void markAttendance() {
+    std::string date, idx;
+    bool present;
+    std::cout << "Enter Date: ";
+    std::cin >> date;
+    std::cout << "Enter Student Index: ";
+    std::cin >> idx;
+    std::cout << "Is student present? (1/0): ";
+    std::cin >> present;
+    attendanceRecords.emplace_back(date, idx, present);
+}
+
+void viewAttendance() {
+    for (auto& a : attendanceRecords) {
+        std::cout << "Date: " << a.date << ", Index: " << a.studentIndex << ", Present: " << (a.isPresent ? "Yes" : "No") << "\n";
+    }
+}
