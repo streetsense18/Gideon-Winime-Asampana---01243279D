@@ -130,3 +130,17 @@ int main() {
     } while (choice != 5);
     return 0;
 }
+
+void generateReport() {
+    std::string idx;
+    std::cout << "Enter Student Index: ";
+    std::cin >> idx;
+    int presentCount = 0, totalCount = 0;
+    for (auto& a : attendanceRecords) {
+        if (a.studentIndex == idx) {
+            totalCount++;
+            if (a.isPresent) presentCount++;
+        }
+    }
+    std::cout << "Student Index: " << idx << ", Attendance: " << presentCount << "/" << totalCount << "\n";
+}
