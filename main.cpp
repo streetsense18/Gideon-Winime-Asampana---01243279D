@@ -186,3 +186,6 @@ void saveStudentsToFile() {
         file << s.getIndex() << "," << s.getName() << endl;
     }
 }
+void loadSessionsFromFile() {
+    // load sessions from file
+}
