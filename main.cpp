@@ -185,6 +185,7 @@ void saveStudentsToFile() {
     for (auto& s : students) {
         file << s.getIndex() << "," << s.getName() << endl;
     }
+    / Update README.md with project details
 }
 void loadSessionsFromFile() {
     // load sessions from file
