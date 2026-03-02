@@ -180,3 +180,9 @@ int main() {
     } while (choice != 6);
     return 0;
 }
+void saveStudentsToFile() {
+    ofstream file("students.txt");
+    for (auto& s : students) {
+        file << s.getIndex() << "," << s.getName() << endl;
+    }
+}
